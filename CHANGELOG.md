@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.6.0] - 2024-11-15
+
+### Changed
+- Check for existing alert rule response in create_alert_rule.py only caught 404 in response where alert doesn't exist. We get 500 response from a "doesnt not exist" response and therefore the next step "update" fails. Extended the if to catch both 404 & 500 status codes and run "create" rather than "update".
+
+
 # [1.5.0] - 2023-11-10
 
 ### Changed
