@@ -223,7 +223,7 @@ def update_alert_rule(uid, alert, grafana_url, http_get_headers, verify_ssl, cli
 
 
 def search_alert_channels(grafana_url, http_get_headers, verify_ssl, client_cert, debug):
-    url = '{0}/api/alert-notifications'.format(grafana_url)
+    url = '{0}/api/notifications'.format(grafana_url)
     print("search alert channels in grafana: {0}".format(url))
     return send_grafana_get(url, http_get_headers, verify_ssl, client_cert, debug)
 
