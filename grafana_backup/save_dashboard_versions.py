@@ -57,6 +57,8 @@ def get_individual_versions(versions, folder_path, log_file, grafana_url, http_g
     if versions:
         with open(u"{0}".format(file_path), 'w') as f:
             for version in versions:
+                print(f"DEBUG: Type of 'version' before get_version call: {type(version)}")
+                print(f"DEBUG: Value of 'version' before get_version call: {repr(version)}")
                 (status, content) = get_version(version['dashboardId'], version['version'], grafana_url, http_get_headers, verify_ssl, client_cert, debug)
                 if status == 200:
                     save_version(str(version['version']), content, folder_path, pretty_print)
